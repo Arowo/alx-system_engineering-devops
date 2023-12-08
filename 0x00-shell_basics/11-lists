@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Listing files in the current directory:"
+ls -la
+parent_dir=$(dirname "$(pwd)")
+echo -e "\nListing files in the parent directory:"
+ls -la "$parent_dir"
+echo -e "\nListing files in the /boot directory:"
+ls -la /boot
