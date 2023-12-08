@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1 --group-directories-first | sed -E ':a;s/([0-9])([^0-9]|$)/\1,\2/;ta;s/(^[^\/]*)$/\1\//'
+ls -A1p --group-directories-first | sed -E '/^\.$/,$d; s/(.*)\/$/\1\//; H; /^\.\.$/g; x; /^\n$/d; s/\n/, /g; $s/\n/\n/'
