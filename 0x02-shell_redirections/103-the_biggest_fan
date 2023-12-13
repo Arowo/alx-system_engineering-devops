@@ -1,0 +1,2 @@
+#!/bin/bash
+awk 'NR > 1 {count[$1]++} END {for (i in count) print i}' "$1" | sort | uniq -c | sort -nr | awk '{print $2}' | head -n 11
