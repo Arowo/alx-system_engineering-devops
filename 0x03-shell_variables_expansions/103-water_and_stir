@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=water;obase=bestchol;${WATER}+stir;${STIR}" | bc
+result=$(printf "%s+%s\n" "$WATER" "$STIR" | tr 'a-z' '1-9' | tr 'j' '0' | tr 'k' '+')echo "ibase=10; obase=bestchol; $result" | bc
